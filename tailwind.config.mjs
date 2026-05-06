@@ -6,7 +6,7 @@ export default {
       colors: {
         sable:      '#F5F1ED',
         argile:     '#5E4B43',
-        sauge:      '#A3AC9A',
+        sauge:      '#9B6A50',
         soie:       '#EBE2D9',
         terracotta: '#A68A7D',
       },

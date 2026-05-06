@@ -1,0 +1,127 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="À propos"
+  description="Découvrez le parcours et l'approche de SOVÉ — soins énergétiques à domicile, avec bienveillance et professionnalisme."
+>
+
+  <!-- En-tête de page -->
+  <section aria-labelledby="apropos-titre" class="py-20 px-6 text-center bg-soie">
+    <div class="max-w-2xl mx-auto">
+      <h1 id="apropos-titre" class="section-title">À propos</h1>
+      <span class="section-title-bar" aria-hidden="true"></span>
+      <p class="text-argile/70 leading-lecture">
+        Qui je suis, d'où je viens, pourquoi ce travail.
+      </p>
+    </div>
+  </section>
+
+  <!-- Parcours -->
+  <section aria-labelledby="parcours-titre" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <!-- Photo placeholder -->
+      <div
+        class="aspect-[3/4] bg-soie rounded-sm flex items-center justify-center text-argile/30 text-sm"
+        aria-label="Photo de la praticienne"
+      >
+        <span class="font-sans text-xs tracking-cta uppercase">Photo à ajouter</span>
+      </div>
+
+      <!-- Texte -->
+      <div class="flex flex-col gap-6">
+        <h2 id="parcours-titre" class="font-serif text-3xl tracking-titre text-argile">
+          [Votre prénom]
+        </h2>
+        <p class="text-argile/70 leading-lecture">
+          <!-- À personnaliser -->
+          Praticienne en soins énergétiques, je propose des accompagnements à domicile
+          fondés sur l'écoute, la présence et un travail doux sur les énergies du corps.
+        </p>
+        <p class="text-argile/70 leading-lecture">
+          Mon parcours m'a amenée à explorer différentes approches du mieux-être, pour finalement
+          développer une pratique qui me ressemble : ancrée dans le réel, loin des dogmes,
+          profondément humaine.
+        </p>
+        <p class="text-argile/70 leading-lecture">
+          Je me déplace dans [votre zone géographique] pour que chaque personne
+          puisse vivre le soin dans son propre espace de vie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approche -->
+  <section aria-labelledby="approche-titre" class="py-20 px-6 bg-soie">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 id="approche-titre" class="section-title">Mon approche</h2>
+        <span class="section-title-bar" aria-hidden="true"></span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            titre: 'Écoute avant tout',
+            texte: 'Chaque séance commence par un échange. Je m\'adapte à ce que vous traversez au moment présent, sans protocole figé.',
+          },
+          {
+            titre: 'Sans discours ésotérique',
+            texte: 'Je travaille avec les énergies du corps sans métaphysique imposée. Ce qui compte, c\'est ce que vous ressentez.',
+          },
+          {
+            titre: 'Un cadre éthique',
+            texte: 'Je n\'émets aucun diagnostic et ne formule aucune promesse thérapeutique. Mon rôle est d\'accompagner, pas de guérir.',
+          },
+          {
+            titre: 'La discrétion comme base',
+            texte: 'Tout ce qui se passe en séance reste confidentiel. Votre espace, votre vécu, votre rythme.',
+          },
+        ].map(({ titre, texte }) => (
+          <div class="flex flex-col gap-3 p-6 bg-sable border border-soie/80 rounded-sm">
+            <h3 class="font-serif text-lg tracking-titre text-argile">{titre}</h3>
+            <p class="text-sm text-argile/70 leading-lecture">{texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Formations -->
+  <section aria-labelledby="formations-titre" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 id="formations-titre" class="section-title">Formations &amp; certifications</h2>
+        <span class="section-title-bar" aria-hidden="true"></span>
+      </div>
+
+      <ul class="flex flex-col divide-y divide-soie">
+        {[
+          { annee: 'XXXX', intitule: '[Intitulé de la formation]', organisme: '[Organisme / École]' },
+          { annee: 'XXXX', intitule: '[Intitulé de la formation]', organisme: '[Organisme / École]' },
+          { annee: 'XXXX', intitule: '[Intitulé de la formation]', organisme: '[Organisme / École]' },
+        ].map(({ annee, intitule, organisme }) => (
+          <li class="py-5 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6">
+            <span class="text-xs tracking-cta text-argile/40 flex-shrink-0">{annee}</span>
+            <div>
+              <p class="font-sans text-sm text-argile">{intitule}</p>
+              <p class="text-xs text-argile/50">{organisme}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section aria-label="Appel à l'action" class="py-16 px-6 bg-soie text-center">
+    <div class="max-w-xl mx-auto flex flex-col gap-4 items-center">
+      <p class="font-serif text-2xl text-argile tracking-titre">
+        Prête à vous offrir un espace pour vous ?
+      </p>
+      <a href="/contact" class="btn-primary">Prendre rendez-vous</a>
+    </div>
+  </section>
+
+</BaseLayout>

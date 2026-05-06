@@ -1,0 +1,78 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mentions légales"
+  description="Mentions légales du site SOVÉ — soins énergétiques à domicile."
+>
+
+  <section aria-labelledby="ml-titre" class="py-20 px-6 bg-soie text-center">
+    <div class="max-w-2xl mx-auto">
+      <h1 id="ml-titre" class="section-title">Mentions légales</h1>
+      <span class="section-title-bar" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <section class="py-16 px-6">
+    <div class="max-w-2xl mx-auto flex flex-col gap-10 text-sm text-argile/70 leading-lecture">
+
+      <article>
+        <h2 class="font-serif text-xl tracking-titre text-argile mb-4">Éditeur du site</h2>
+        <p>
+          Nom : [Votre nom et prénom]<br />
+          Statut : [Auto-entrepreneur / Micro-entrepreneur / Nom de la structure]<br />
+          SIRET : [Numéro SIRET]<br />
+          Adresse : [Votre adresse complète]<br />
+          E-mail : <a href="mailto:contact@sove-energetique.fr" class="text-sauge hover:text-argile transition-colors">contact@sove-energetique.fr</a>
+        </p>
+      </article>
+
+      <article>
+        <h2 class="font-serif text-xl tracking-titre text-argile mb-4">Hébergement</h2>
+        <p>
+          Ce site est hébergé par :<br />
+          [Nom de l'hébergeur]<br />
+          [Adresse de l'hébergeur]<br />
+          [Site web de l'hébergeur]
+        </p>
+      </article>
+
+      <article>
+        <h2 class="font-serif text-xl tracking-titre text-argile mb-4">Propriété intellectuelle</h2>
+        <p>
+          L'ensemble du contenu de ce site (textes, images, logo, design) est protégé par le droit d'auteur.
+          Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.
+        </p>
+      </article>
+
+      <article>
+        <h2 class="font-serif text-xl tracking-titre text-argile mb-4">Responsabilité</h2>
+        <p>
+          Les informations publiées sur ce site sont fournies à titre informatif.
+          Les soins présentés ne sont pas des actes médicaux et ne sauraient se substituer
+          à un diagnostic ou à un traitement médical. En cas de problème de santé,
+          consultez un professionnel de santé qualifié.
+        </p>
+      </article>
+
+      <article>
+        <h2 class="font-serif text-xl tracking-titre text-argile mb-4">Liens hypertextes</h2>
+        <p>
+          Ce site peut contenir des liens vers des sites tiers. SOVÉ n'est pas responsable
+          du contenu de ces sites externes.
+        </p>
+      </article>
+
+      <article>
+        <h2 class="font-serif text-xl tracking-titre text-argile mb-4">Données personnelles</h2>
+        <p>
+          Pour toute information relative au traitement de vos données personnelles,
+          consultez notre <a href="/politique-de-confidentialite" class="text-sauge hover:text-argile transition-colors">politique de confidentialité</a>.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+</BaseLayout>

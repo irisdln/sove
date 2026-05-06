@@ -1,0 +1,139 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const soins = await getCollection('soins', ({ data }) => !data.draft);
+  return soins.map((soin) => ({ params: { slug: soin.slug } }));
+}
+
+const { slug } = Astro.params;
+const soin = await getEntry('soins', slug);
+
+if (!soin) return Astro.redirect('/soins');
+
+const { Content } = await soin.render();
+---
+
+<BaseLayout
+  title={soin.data.titre}
+  description={soin.data.resume}
+>
+
+  <!-- Navigation retour -->
+  <div class="px-6 pt-10 max-w-3xl mx-auto">
+    <a
+      href="/soins"
+      class="text-xs tracking-cta uppercase text-argile/50 hover:text-argile transition-colors duration-200 focus-visible:outline-sauge"
+    >
+      ← Retour aux soins
+    </a>
+  </div>
+
+  <!-- En-tête du soin -->
+  <section aria-labelledby="soin-titre" class="py-14 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h1 id="soin-titre" class="font-serif text-4xl md:text-5xl font-light tracking-titre text-argile mb-4">
+        {soin.data.titre}
+      </h1>
+      <span class="block w-10 h-px bg-sauge mb-6"></span>
+      <p class="text-lg text-argile/70 leading-lecture mb-8">
+        {soin.data.resume}
+      </p>
+
+      <!-- Métadonnées -->
+      <div class="flex flex-wrap gap-6 pb-8 border-b border-soie">
+        <div class="flex flex-col gap-1">
+          <span class="text-xs tracking-cta uppercase text-argile/40">Durée</span>
+          <span class="font-sans text-sm text-argile">{soin.data.duree}</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs tracking-cta uppercase text-argile/40">Tarif</span>
+          <span class="font-sans text-sm text-argile">{soin.data.tarif}&nbsp;€</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs tracking-cta uppercase text-argile/40">Lieu</span>
+          <span class="font-sans text-sm text-argile">À votre domicile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu Markdown -->
+  <article class="px-6 pb-16">
+    <div class="max-w-3xl mx-auto prose prose-sove">
+      <Content />
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section aria-label="Réservation" class="py-16 px-6 bg-soie text-center">
+    <div class="max-w-xl mx-auto flex flex-col gap-4 items-center">
+      <p class="font-serif text-2xl text-argile tracking-titre">
+        Ce soin vous parle ?
+      </p>
+      <a href="/contact" class="btn-primary">Réserver ce soin</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style is:global>
+  .prose-sove {
+    color: theme('colors.argile');
+    font-family: theme('fontFamily.sans');
+    font-size: theme('fontSize.sm');
+    line-height: theme('lineHeight.lecture');
+  }
+  .prose-sove h2 {
+    font-family: theme('fontFamily.serif');
+    font-size: theme('fontSize.2xl');
+    font-weight: 300;
+    letter-spacing: theme('letterSpacing.titre');
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: theme('colors.argile');
+  }
+  .prose-sove h3 {
+    font-family: theme('fontFamily.serif');
+    font-size: theme('fontSize.xl');
+    letter-spacing: theme('letterSpacing.titre');
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: theme('colors.argile');
+  }
+  .prose-sove p {
+    margin-bottom: 1rem;
+    color: rgb(94 75 67 / 0.75);
+  }
+  .prose-sove ul, .prose-sove ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgb(94 75 67 / 0.75);
+  }
+  .prose-sove li {
+    margin-bottom: 0.375rem;
+  }
+  .prose-sove strong {
+    font-weight: 500;
+    color: theme('colors.argile');
+  }
+  .prose-sove em {
+    color: theme('colors.terracotta');
+  }
+  .prose-sove blockquote {
+    border-left: 2px solid theme('colors.sauge');
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: rgb(94 75 67 / 0.6);
+    margin: 1.5rem 0;
+  }
+  .prose-sove a {
+    color: theme('colors.sauge');
+    text-decoration: underline;
+  }
+  .prose-sove hr {
+    border-color: theme('colors.soie');
+    margin: 2rem 0;
+  }
+</style>

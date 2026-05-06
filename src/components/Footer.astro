@@ -1,0 +1,66 @@
+---
+const annee = new Date().getFullYear();
+---
+
+<footer class="bg-soie border-t border-sable mt-24">
+  <div class="max-w-5xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+    <!-- Identité -->
+    <div>
+      <p class="font-serif text-2xl tracking-titre text-argile mb-3">SOVÉ</p>
+      <p class="text-sm text-argile/70 leading-relaxed">
+        Soins énergétiques à domicile.<br />
+        Ancrage, Profondeur &amp; Sécurité.
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav aria-label="Navigation secondaire">
+      <p class="text-xs tracking-cta uppercase text-argile/50 mb-4">Navigation</p>
+      <ul class="flex flex-col gap-2.5 text-sm">
+        {[
+          { href: '/a-propos',  label: 'Découvrir' },
+          { href: '/soins',     label: 'Les soins' },
+          { href: '/tarifs',    label: 'Tarifs'    },
+          { href: '/contact',   label: 'Réserver'  },
+        ].map(({ href, label }) => (
+          <li>
+            <a href={href} class="text-argile/70 hover:text-argile transition-colors duration-200">
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Légal -->
+    <div>
+      <p class="text-xs tracking-cta uppercase text-argile/50 mb-4">Informations</p>
+      <ul class="flex flex-col gap-2.5 text-sm">
+        <li>
+          <a href="/mentions-legales" class="text-argile/70 hover:text-argile transition-colors duration-200">
+            Mentions légales
+          </a>
+        </li>
+        <li>
+          <a href="/politique-de-confidentialite" class="text-argile/70 hover:text-argile transition-colors duration-200">
+            Politique de confidentialité
+          </a>
+        </li>
+        <li>
+          <a href="/contact" class="text-argile/70 hover:text-argile transition-colors duration-200">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bas de page -->
+  <div class="border-t border-sable">
+    <div class="max-w-5xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-argile/50">
+      <p>&copy; {annee} SOVÉ. Tous droits réservés.</p>
+      <p>Les soins proposés ne sont pas des actes médicaux et ne se substituent pas à un suivi médical.</p>
+    </div>
+  </div>
+</footer>

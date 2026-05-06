@@ -1,0 +1,34 @@
+---
+interface Props {
+  titre:   string;
+  resume:  string;
+  duree:   string;
+  tarif:   number;
+  href:    string;
+}
+
+const { titre, resume, duree, tarif, href } = Astro.props;
+---
+
+<article class="group bg-sable border border-soie rounded-sm p-8 flex flex-col gap-4 transition-shadow duration-300 hover:shadow-md">
+  <header class="flex items-start justify-between gap-4">
+    <h3 class="font-serif text-xl tracking-titre text-argile leading-snug group-hover:text-terracotta transition-colors duration-200">
+      {titre}
+    </h3>
+    <span class="flex-shrink-0 text-sm font-sans font-medium text-terracotta">
+      {tarif}&nbsp;€
+    </span>
+  </header>
+
+  <p class="text-sm text-argile/70 leading-lecture flex-1">{resume}</p>
+
+  <footer class="flex items-center justify-between pt-2 border-t border-soie">
+    <span class="text-xs text-argile/50 tracking-wide">{duree}</span>
+    <a
+      href={href}
+      class="text-xs tracking-cta uppercase font-medium text-sauge hover:text-argile transition-colors duration-200 focus-visible:outline-sauge"
+    >
+      En savoir plus →
+    </a>
+  </footer>
+</article>

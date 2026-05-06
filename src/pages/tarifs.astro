@@ -1,0 +1,127 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const soins = (await getCollection('soins', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+---
+
+<BaseLayout
+  title="Tarifs"
+  description="Grille tarifaire des soins énergétiques SOVÉ à domicile. Tarifs transparents, sans surprise."
+>
+
+  <!-- En-tête -->
+  <section aria-labelledby="tarifs-titre" class="py-20 px-6 text-center bg-soie">
+    <div class="max-w-2xl mx-auto">
+      <h1 id="tarifs-titre" class="section-title">Tarifs</h1>
+      <span class="section-title-bar" aria-hidden="true"></span>
+      <p class="text-argile/70 leading-lecture">
+        Des tarifs transparents, sans frais cachés.
+        Les soins se déroulent à votre domicile — le déplacement est inclus dans le tarif
+        pour les zones desservies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grille tarifaire -->
+  <section aria-label="Grille des tarifs" class="py-20 px-6">
+    <div class="max-w-2xl mx-auto">
+      <table class="w-full" aria-label="Tarifs des soins">
+        <thead>
+          <tr class="border-b border-soie">
+            <th scope="col" class="text-left text-xs tracking-cta uppercase text-argile/40 pb-4 font-normal">
+              Soin
+            </th>
+            <th scope="col" class="text-center text-xs tracking-cta uppercase text-argile/40 pb-4 font-normal">
+              Durée
+            </th>
+            <th scope="col" class="text-right text-xs tracking-cta uppercase text-argile/40 pb-4 font-normal">
+              Tarif
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {soins.map((soin) => (
+            <tr class="border-b border-soie group">
+              <td class="py-5">
+                <a
+                  href={`/soins/${soin.slug}`}
+                  class="font-serif text-base tracking-titre text-argile group-hover:text-terracotta transition-colors duration-200"
+                >
+                  {soin.data.titre}
+                </a>
+                <p class="text-xs text-argile/50 mt-0.5 leading-relaxed max-w-xs">
+                  {soin.data.resume.slice(0, 80)}&hellip;
+                </p>
+              </td>
+              <td class="py-5 text-center text-sm text-argile/60 whitespace-nowrap">
+                {soin.data.duree}
+              </td>
+              <td class="py-5 text-right font-sans text-lg font-medium text-terracotta whitespace-nowrap">
+                {soin.data.tarif}&nbsp;€
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Infos pratiques -->
+  <section aria-labelledby="infos-titre" class="py-16 px-6 bg-soie">
+    <div class="max-w-3xl mx-auto">
+      <h2 id="infos-titre" class="font-serif text-2xl tracking-titre text-argile text-center mb-10">
+        Informations pratiques
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          {
+            titre: 'Déplacement',
+            texte: 'Je me déplace dans [votre zone géographique]. Au-delà, des frais kilométriques peuvent s\'appliquer — contactez-moi pour en discuter.',
+          },
+          {
+            titre: 'Règlement',
+            texte: 'Le règlement s\'effectue en fin de séance, par espèces ou virement bancaire.',
+          },
+          {
+            titre: 'Annulation',
+            texte: 'Toute annulation dans les 24h précédant la séance est soumise à une indemnité de [montant]€. Passé 48h, c\'est sans frais.',
+          },
+          {
+            titre: 'Forfaits',
+            texte: 'Des formules en plusieurs séances sont disponibles. Contactez-moi pour connaître les tarifs actuels.',
+          },
+        ].map(({ titre, texte }) => (
+          <div class="p-6 bg-sable border border-soie/80 rounded-sm">
+            <h3 class="font-serif text-base tracking-titre text-argile mb-2">{titre}</h3>
+            <p class="text-sm text-argile/70 leading-lecture">{texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer légal -->
+  <section aria-label="Avertissement légal" class="py-10 px-6">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-xs text-argile/40 leading-relaxed text-center border border-soie rounded-sm p-6">
+        Les soins énergétiques proposés par SOVÉ sont des pratiques de bien-être.
+        Ils ne constituent pas des actes médicaux, ne permettent pas d'établir un diagnostic
+        et ne se substituent à aucun traitement médical ou psychologique.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section aria-label="Réservation" class="py-16 px-6 bg-soie text-center">
+    <div class="max-w-xl mx-auto flex flex-col gap-4 items-center">
+      <p class="font-serif text-2xl text-argile tracking-titre">
+        Prête à prendre soin de vous ?
+      </p>
+      <a href="/contact" class="btn-primary">Prendre rendez-vous</a>
+    </div>
+  </section>
+
+</BaseLayout>

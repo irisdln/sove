@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sove-color-sable:      #F5F1ED;
+    --sove-color-argile:     #5E4B43;
+    --sove-color-sauge:      #A3AC9A;
+    --sove-color-soie:       #EBE2D9;
+    --sove-color-terracotta: #A68A7D;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sable text-argile font-sans text-base leading-lecture antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-titre;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Bouton principal — forme galet */
+  .btn-primary {
+    @apply inline-block px-8 py-3 rounded-galet bg-sauge text-sable
+           text-xs font-sans font-medium tracking-cta uppercase
+           transition-all duration-300 ease-in-out
+           hover:bg-argile focus:outline-none focus-visible:ring-2
+           focus-visible:ring-argile focus-visible:ring-offset-2;
+  }
+
+  /* Bouton secondaire — contour */
+  .btn-outline {
+    @apply inline-block px-8 py-3 rounded-galet border border-argile text-argile
+           text-xs font-sans font-medium tracking-cta uppercase
+           transition-all duration-300 ease-in-out
+           hover:bg-argile hover:text-sable focus:outline-none
+           focus-visible:ring-2 focus-visible:ring-argile focus-visible:ring-offset-2;
+  }
+
+  /* Titre de section */
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif font-light tracking-titre text-argile;
+  }
+
+  /* Trait décoratif sous les titres */
+  .section-title-bar {
+    @apply block w-12 h-px bg-sauge mx-auto mt-4 mb-8;
+  }
+
+  /* Lien de navigation */
+  .nav-link {
+    @apply text-xs tracking-cta uppercase font-sans font-medium text-argile
+           relative pb-0.5 after:absolute after:bottom-0 after:left-0
+           after:w-0 after:h-px after:bg-sauge after:transition-all after:duration-300
+           hover:after:w-full focus-visible:outline-none focus-visible:after:w-full;
+  }
+}

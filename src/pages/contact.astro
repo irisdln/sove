@@ -1,0 +1,189 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact &amp; réservation"
+  description="Prenez contact avec SOVÉ pour réserver un soin énergétique à domicile. Réponse sous 48h."
+>
+
+  <!-- En-tête -->
+  <section aria-labelledby="contact-titre" class="py-20 px-6 text-center bg-soie">
+    <div class="max-w-2xl mx-auto">
+      <h1 id="contact-titre" class="section-title">Réserver un soin</h1>
+      <span class="section-title-bar" aria-hidden="true"></span>
+      <p class="text-argile/70 leading-lecture">
+        Envoyez-moi un message et je vous réponds dans les 48h
+        pour convenir d'une date et d'un créneau.
+      </p>
+    </div>
+  </section>
+
+  <!-- Formulaire + coordonnées -->
+  <section aria-labelledby="formulaire-titre" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+
+      <!-- Formulaire (Web3Forms — gratuit, pas de backend) -->
+      <div>
+        <h2 id="formulaire-titre" class="font-serif text-2xl tracking-titre text-argile mb-8">
+          Votre message
+        </h2>
+
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="flex flex-col gap-5"
+          novalidate
+        >
+          <!-- Clé API Web3Forms — à remplacer par votre clé sur web3forms.com -->
+          <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS" />
+          <input type="hidden" name="subject" value="Nouvelle demande de soin — SOVÉ" />
+          <input type="hidden" name="redirect" value="https://sove-energetique.fr/merci" />
+
+          <!-- Anti-spam honeypot -->
+          <input type="checkbox" name="botcheck" class="sr-only" aria-hidden="true" tabindex="-1" />
+
+          <div class="flex flex-col gap-1.5">
+            <label for="prenom" class="text-xs tracking-cta uppercase text-argile/60">
+              Prénom <span aria-label="champ obligatoire">*</span>
+            </label>
+            <input
+              id="prenom"
+              type="text"
+              name="prenom"
+              required
+              autocomplete="given-name"
+              class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
+              placeholder="Votre prénom"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="email" class="text-xs tracking-cta uppercase text-argile/60">
+              E-mail <span aria-label="champ obligatoire">*</span>
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
+              placeholder="votre@email.fr"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="telephone" class="text-xs tracking-cta uppercase text-argile/60">
+              Téléphone
+            </label>
+            <input
+              id="telephone"
+              type="tel"
+              name="telephone"
+              autocomplete="tel"
+              class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
+              placeholder="06 XX XX XX XX"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="soin" class="text-xs tracking-cta uppercase text-argile/60">
+              Soin souhaité
+            </label>
+            <select
+              id="soin"
+              name="soin"
+              class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile focus:outline-none focus:border-sauge transition-colors duration-200 cursor-pointer"
+            >
+              <option value="">— Choisir un soin —</option>
+              <option value="soin-energetique">Soin énergétique global</option>
+              <option value="ancrage">Soin d'ancrage</option>
+              <option value="liberation-emotions">Soin de libération émotionnelle</option>
+              <option value="autre">Autre / Je ne sais pas encore</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="message" class="text-xs tracking-cta uppercase text-argile/60">
+              Message <span aria-label="champ obligatoire">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="4"
+              class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200 resize-none"
+              placeholder="Présentez-vous brièvement et indiquez vos disponibilités…"
+            ></textarea>
+          </div>
+
+          <!-- Consentement RGPD -->
+          <div class="flex items-start gap-3 mt-2">
+            <input
+              id="rgpd"
+              type="checkbox"
+              name="rgpd"
+              required
+              class="mt-0.5 accent-sauge flex-shrink-0"
+            />
+            <label for="rgpd" class="text-xs text-argile/60 leading-relaxed">
+              J'accepte que mes données soient utilisées pour traiter ma demande, conformément
+              à la <a href="/politique-de-confidentialite" class="underline hover:text-argile transition-colors">politique de confidentialité</a>.
+            </label>
+          </div>
+
+          <div class="mt-2">
+            <button type="submit" class="btn-primary w-full sm:w-auto">
+              Envoyer ma demande
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Coordonnées -->
+      <aside aria-labelledby="coordonnees-titre">
+        <h2 id="coordonnees-titre" class="font-serif text-2xl tracking-titre text-argile mb-8">
+          Informations
+        </h2>
+
+        <dl class="flex flex-col gap-8">
+          <div>
+            <dt class="text-xs tracking-cta uppercase text-argile/40 mb-2">Zone d'intervention</dt>
+            <dd class="text-sm text-argile/70 leading-lecture">
+              [Votre ville] et ses environs (rayon de [XX] km).<br />
+              Contactez-moi si vous êtes en dehors de cette zone.
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs tracking-cta uppercase text-argile/40 mb-2">E-mail</dt>
+            <dd>
+              <a href="mailto:contact@sove-energetique.fr" class="text-sm text-sauge hover:text-argile transition-colors duration-200">
+                contact@sove-energetique.fr
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs tracking-cta uppercase text-argile/40 mb-2">Délai de réponse</dt>
+            <dd class="text-sm text-argile/70">Sous 48h ouvrées</dd>
+          </div>
+          <div>
+            <dt class="text-xs tracking-cta uppercase text-argile/40 mb-2">Disponibilités</dt>
+            <dd class="text-sm text-argile/70 leading-lecture">
+              [Vos jours et horaires — ex. : du lundi au vendredi, 9h–19h]
+            </dd>
+          </div>
+        </dl>
+
+        <!-- Note rassurante -->
+        <div class="mt-12 p-6 bg-soie rounded-sm border border-soie">
+          <p class="text-sm text-argile/60 leading-lecture">
+            Pas de pression, pas d'engagement. Un premier échange par message suffit
+            pour voir si nos énergies sont alignées.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</BaseLayout>

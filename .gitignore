@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.env
+charte_page_*.png
+dev.sh
+
+# Fichiers internes Claude Code
+.claude/
+
+# Assets de travail non destinés au repo
+CLAUDE/
+SITE/

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Message envoyé"
+  description="Votre message a bien été envoyé. SOVÉ vous répondra dans les 48h."
+>
+  <section class="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24">
+    <div class="max-w-md mx-auto flex flex-col items-center gap-6">
+      <span class="text-sauge text-3xl" aria-hidden="true">◦</span>
+      <h1 class="font-serif text-3xl tracking-titre text-argile">Message envoyé</h1>
+      <p class="text-argile/70 leading-lecture">
+        Merci pour votre message. Je vous répondrai dans les 48h pour convenir d'un rendez-vous.
+      </p>
+      <a href="/" class="btn-outline mt-4">Retour à l'accueil</a>
+    </div>
+  </section>
+</BaseLayout>

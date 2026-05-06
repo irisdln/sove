@@ -1,0 +1,86 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SoinCard from '@/components/SoinCard.astro';
+import { getCollection } from 'astro:content';
+
+const soins = (await getCollection('soins', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+---
+
+<BaseLayout
+  title="Les soins"
+  description="Découvrez les soins énergétiques proposés par SOVÉ à domicile : soin global, ancrage, libération émotionnelle et plus encore."
+>
+
+  <!-- En-tête -->
+  <section aria-labelledby="soins-titre" class="py-20 px-6 text-center bg-soie">
+    <div class="max-w-2xl mx-auto">
+      <h1 id="soins-titre" class="section-title">Les soins</h1>
+      <span class="section-title-bar" aria-hidden="true"></span>
+      <p class="text-argile/70 leading-lecture">
+        Chaque soin est adapté à votre besoin du moment.
+        Une première séance peut être l'occasion de découvrir et de ressentir.
+      </p>
+    </div>
+  </section>
+
+  <!-- Liste des soins -->
+  <section aria-label="Liste des soins" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      {soins.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {soins.map((soin) => (
+            <SoinCard
+              titre={soin.data.titre}
+              resume={soin.data.resume}
+              duree={soin.data.duree}
+              tarif={soin.data.tarif}
+              href={`/soins/${soin.slug}`}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="text-center text-argile/60">Les soins seront bientôt disponibles.</p>
+      )}
+    </div>
+  </section>
+
+  <!-- Encart "À domicile" -->
+  <section aria-labelledby="modalite-titre" class="py-16 px-6 bg-soie">
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 id="modalite-titre" class="font-serif text-2xl tracking-titre text-argile mb-4">
+          Comment ça se passe ?
+        </h2>
+        <p class="text-argile/70 leading-lecture text-sm">
+          Je me déplace à votre domicile avec le matériel nécessaire.
+          La séance se déroule allongé·e, habillé·e, sur table de massage ou futon.
+          Prévoyez un espace calme d'environ 2 m².
+        </p>
+      </div>
+      <div>
+        <h2 class="font-serif text-2xl tracking-titre text-argile mb-4">
+          Pour qui ?
+        </h2>
+        <p class="text-argile/70 leading-lecture text-sm">
+          Ces soins s'adressent à toute personne adulte souhaitant explorer une approche
+          complémentaire du mieux-être. Ils ne se substituent à aucun traitement médical.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section aria-label="Réservation" class="py-16 px-6 text-center">
+    <div class="max-w-xl mx-auto flex flex-col gap-4 items-center">
+      <p class="font-serif text-2xl text-argile tracking-titre">
+        Envie de vous lancer ?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="btn-primary">Réserver un soin</a>
+        <a href="/tarifs" class="btn-outline">Voir les tarifs</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

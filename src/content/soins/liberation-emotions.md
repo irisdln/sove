@@ -2,8 +2,8 @@
 titre: Soin de libération émotionnelle
 resume: Un espace sécurisé pour accueillir et traverser les émotions bloquées, favorisant un sentiment de légèreté et de fluidité intérieure.
 duree: 2h
-tarif: 110
-ordre: 3
+tarif: 60
+ordre: 1
 ---
 
 ## Le soin

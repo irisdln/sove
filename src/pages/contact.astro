@@ -60,12 +60,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             </div>
             <div class="flex flex-col gap-1.5">
               <label for="nom" class="text-xs tracking-cta uppercase text-argile/60">
-                Nom
+                Nom <span aria-label="champ obligatoire">*</span>
               </label>
               <input
                 id="nom"
                 type="text"
                 name="nom"
+                required
                 autocomplete="family-name"
                 class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
                 placeholder="Votre nom"

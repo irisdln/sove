@@ -6,7 +6,7 @@ const navLinks = [
   { href: '/a-propos',  label: 'Découvrir' },
   { href: '/soins',     label: 'Les soins' },
   { href: '/tarifs',    label: 'Tarifs'    },
-  { href: '/contact',   label: 'Réserver'  },
+  { href: '/contact',   label: 'Contact'   },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -50,6 +50,18 @@ const currentPath = Astro.url.pathname;
             </a>
           </li>
         ))}
+        <li>
+          <a
+            href="/reserver"
+            class:list={[
+              'btn-primary text-xs py-2 px-5',
+              currentPath.startsWith('/reserver') && 'opacity-80',
+            ]}
+            aria-current={currentPath.startsWith('/reserver') ? 'page' : undefined}
+          >
+            Réserver
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -89,6 +101,11 @@ const currentPath = Astro.url.pathname;
           </a>
         </li>
       ))}
+      <li>
+        <a href="/reserver" class="btn-primary text-xs py-2 px-5">
+          Réserver
+        </a>
+      </li>
     </ul>
   </nav>
 </header>

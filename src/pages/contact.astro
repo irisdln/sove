@@ -43,19 +43,34 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <!-- Anti-spam honeypot -->
           <input type="checkbox" name="botcheck" class="sr-only" aria-hidden="true" tabindex="-1" />
 
-          <div class="flex flex-col gap-1.5">
-            <label for="prenom" class="text-xs tracking-cta uppercase text-argile/60">
-              Prénom <span aria-label="champ obligatoire">*</span>
-            </label>
-            <input
-              id="prenom"
-              type="text"
-              name="prenom"
-              required
-              autocomplete="given-name"
-              class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
-              placeholder="Votre prénom"
-            />
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="prenom" class="text-xs tracking-cta uppercase text-argile/60">
+                Prénom <span aria-label="champ obligatoire">*</span>
+              </label>
+              <input
+                id="prenom"
+                type="text"
+                name="prenom"
+                required
+                autocomplete="given-name"
+                class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
+                placeholder="Votre prénom"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="nom" class="text-xs tracking-cta uppercase text-argile/60">
+                Nom
+              </label>
+              <input
+                id="nom"
+                type="text"
+                name="nom"
+                autocomplete="family-name"
+                class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
+                placeholder="Votre nom"
+              />
+            </div>
           </div>
 
           <div class="flex flex-col gap-1.5">
@@ -83,7 +98,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
               name="telephone"
               autocomplete="tel"
               class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200"
-              placeholder="06 XX XX XX XX"
+              placeholder=""
             />
           </div>
 
@@ -98,7 +113,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             >
               <option value="">— Choisir un soin —</option>
               <option value="liberation-emotions">Soin de libération émotionnelle</option>
-              <option value="autre">Autre / Je ne sais pas encore</option>
             </select>
           </div>
 

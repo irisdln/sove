@@ -12,7 +12,7 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
 
 <BaseLayout
   title="SOVÉ"
-  description="Soins énergétiques à domicile — Retrouvez un apaisement profond, libérez les tensions et reconnectez-vous à vous-même. Accompagnement personnalisé chez vous."
+  description="Soins énergétiques à domicile à Belfort. Retrouvez un apaisement profond, libérez les tensions et reconnectez-vous à vous-même."
 >
 
   <!-- Hero -->
@@ -41,7 +41,7 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
         <p class="text-base md:text-lg text-argile/65 leading-lecture max-w-lg mx-auto">
           Des soins énergétiques à domicile pour libérer les tensions,
           retrouver l'équilibre et vous reconnecter à vous-même.
-          Sans déplacement. Dans votre espace.
+          Dans votre espace, à votre rythme.
         </p>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -66,11 +66,11 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
         {[
           {
             titre: 'Lâcher-prise',
-            texte: 'Relâchez les tensions accumulées — dans le corps, dans la tête. Repartez léger·e, ancré·e dans l\'instant présent.',
+            texte: 'Relâchez les tensions accumulées dans le corps et dans la tête. Repartez légère, ancrée dans l\'instant présent.',
           },
           {
             titre: 'Équilibre émotionnel',
-            texte: 'Traversez les émotions difficiles sans les porter seul·e. Un espace sécurisé pour accueillir ce qui se présente.',
+            texte: 'Traversez les émotions difficiles sans les porter seule. Un espace sécurisé pour accueillir ce qui se présente.',
           },
           {
             titre: 'Reconnexion à soi',
@@ -92,10 +92,10 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
     <section aria-labelledby="soins-titre" class="py-24 px-6">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-14">
-          <h2 id="soins-titre" class="section-title">Les soins proposés</h2>
+          <h2 id="soins-titre" class="section-title">Le soin proposé</h2>
           <span class="section-title-bar" aria-hidden="true"></span>
           <p class="text-sm text-argile/60 mt-4 max-w-md mx-auto leading-lecture">
-            Chaque soin est adapté à votre besoin du moment. Une première séance suffit pour ressentir la différence.
+            Un accompagnement adapté à votre besoin du moment. Une première séance suffit pour ressentir la différence.
           </p>
         </div>
 
@@ -110,10 +110,6 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
             />
           ))}
         </div>
-
-        <div class="text-center mt-12">
-          <a href="/soins" class="btn-outline">Voir tous les soins</a>
-        </div>
       </div>
     </section>
   )}
@@ -122,7 +118,7 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
   <section aria-labelledby="temoignages-titre" class="bg-soie py-24 px-6">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-14">
-        <h2 id="temoignages-titre" class="section-title">Ce qu'ils en disent</h2>
+        <h2 id="temoignages-titre" class="section-title">Ce qu'elles en disent</h2>
         <span class="section-title-bar" aria-hidden="true"></span>
       </div>
 
@@ -131,15 +127,15 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
           {
             texte: "Je suis arrivée sceptique et je suis repartie transformée. Une heure de soin m'a apporté plus de calme que des semaines de stress. Je recommande à 100 %.",
             auteur: 'Marie-Claire L.',
-            detail: 'Soin énergétique global',
+            detail: 'Libération émotionnelle',
           },
           {
             texte: "Le fait de ne pas avoir à se déplacer après, c'est une vraie différence. On reste dans cet état de détente, chez soi. C'est un luxe que je m'offre régulièrement maintenant.",
             auteur: 'Sophie R.',
-            detail: 'Soin d\'ancrage',
+            detail: 'Libération émotionnelle',
           },
           {
-            texte: "Je traversais une période difficile émotionnellement. La séance m'a aidée à me sentir moins seule avec tout ça. Bienveillante, professionnelle, je recommande.",
+            texte: "Je traversais une période difficile. La séance m'a aidée à me sentir moins seule avec tout ça. Bienveillante, professionnelle, je recommande.",
             auteur: 'Camille T.',
             detail: 'Libération émotionnelle',
           },
@@ -182,12 +178,12 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
         </div>
         <span class="block w-8 h-px bg-sauge"></span>
         <p class="text-argile/65 leading-lecture text-sm md:text-base">
-          Je suis [votre prénom], praticienne en soins énergétiques.
+          Je suis Iris, praticienne en soins énergétiques.
           Mon travail est fondé sur l'écoute, la présence et un accompagnement doux
-          qui va là où c'est nécessaire — sans métaphysique imposée, sans promesses.
+          qui va là où c'est nécessaire. Sans métaphysique imposée, sans promesses.
         </p>
         <p class="text-argile/65 leading-lecture text-sm md:text-base">
-          Ce qui m'importe : que vous repartiez plus léger·e, plus ancré·e,
+          Ce qui m'importe : que vous repartiez plus légère, plus ancrée,
           avec un peu plus d'espace intérieur qu'à votre arrivée.
         </p>
         <a href="/a-propos" class="btn-outline self-start mt-2">Mon parcours</a>
@@ -204,7 +200,7 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
       <p class="text-argile/65 leading-lecture mb-10 max-w-xl mx-auto">
         Je me déplace avec tout le matériel nécessaire. Vous restez dans votre espace,
         sans stress du retour, sans rupture de l'état de détente.
-        Après le soin, vous êtes déjà chez vous — c'est là que la récupération commence.
+        Après le soin, vous êtes déjà chez vous. C'est là que la récupération commence.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/reserver" class="btn-primary">Prendre rendez-vous</a>

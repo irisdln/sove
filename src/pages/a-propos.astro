@@ -4,7 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
 <BaseLayout
   title="À propos"
-  description="Découvrez le parcours et l'approche de SOVÉ — soins énergétiques à domicile, avec bienveillance et professionnalisme."
+  description="Découvrez le parcours et l'approche d'Iris, praticienne en soins énergétiques à domicile à Belfort."
 >
 
   <!-- En-tête de page -->
@@ -45,7 +45,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         </p>
         <p class="text-argile/70 leading-lecture">
           Je me déplace à <strong class="font-medium text-argile">Belfort et ses environs (10 km)</strong> pour que chaque personne
-          puisse vivre le soin dans son propre espace de vie, sans avoir à se déplacer.
+          puisse vivre le soin dans son propre espace de vie.
         </p>
       </div>
     </div>
@@ -59,7 +59,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         <span class="section-title-bar" aria-hidden="true"></span>
       </div>
       <p class="text-center text-argile/65 leading-lecture max-w-xl mx-auto mb-12">
-        Je ne travaille pas avec des protocoles. Je travaille avec vous —
+        Je ne travaille pas avec des protocoles. Je travaille avec vous,
         là où vous en êtes, avec ce que vous traversez au moment présent.
       </p>
 
@@ -67,15 +67,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         {[
           {
             titre: 'Vous arrivez comme vous êtes',
-            texte: 'Pas de préparation, pas de bonne attitude à adopter. Je m\'adapte à vous — à votre rythme, à ce qui se présente ce jour-là.',
+            texte: 'Pas de préparation, pas de bonne attitude à adopter. Je m\'adapte à vous, à votre rythme, à ce qui se présente ce jour-là.',
           },
           {
             titre: 'Pas d\'ésotérisme imposé',
-            texte: 'Les énergies du corps, vous les ressentez — même si vous ne croyez à rien de particulier. Je n\'ai pas besoin de vous convaincre. Votre ressenti suffit.',
+            texte: 'Les énergies du corps, vous les ressentez même si vous ne croyez à rien de particulier. Je n\'ai pas besoin de vous convaincre. Votre ressenti suffit.',
           },
           {
             titre: 'Ce qui se passe ici reste ici',
-            texte: 'Vos mots, vos larmes, vos silences — tout reste confidentiel. Un espace où rien ne se juge, rien ne se commente. Juste de la présence.',
+            texte: 'Vos mots, vos larmes, vos silences : tout reste confidentiel. Un espace où rien ne se juge, rien ne se commente. Juste de la présence.',
           },
           {
             titre: 'L\'honnêteté comme premier soin',
@@ -91,39 +91,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Formations -->
-  <section aria-labelledby="formations-titre" class="py-20 px-6">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 id="formations-titre" class="section-title">Formations &amp; certifications</h2>
-        <span class="section-title-bar" aria-hidden="true"></span>
-      </div>
-
-      <ul class="flex flex-col divide-y divide-soie">
-        {[
-          { annee: 'XXXX', intitule: '[Intitulé de la formation]', organisme: '[Organisme / École]' },
-          { annee: 'XXXX', intitule: '[Intitulé de la formation]', organisme: '[Organisme / École]' },
-          { annee: 'XXXX', intitule: '[Intitulé de la formation]', organisme: '[Organisme / École]' },
-        ].map(({ annee, intitule, organisme }) => (
-          <li class="py-5 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6">
-            <span class="text-xs tracking-cta text-argile/40 flex-shrink-0">{annee}</span>
-            <div>
-              <p class="font-sans text-sm text-argile">{intitule}</p>
-              <p class="text-xs text-argile/50">{organisme}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA -->
-  <section aria-label="Appel à l'action" class="py-16 px-6 bg-soie text-center">
+  <section aria-label="Appel à l'action" class="py-16 px-6 bg-sable text-center">
     <div class="max-w-xl mx-auto flex flex-col gap-4 items-center">
       <p class="font-serif text-2xl text-argile tracking-titre">
-        Prête à vous offrir un espace pour vous ?
+        Envie de prendre soin de vous ?
       </p>
-      <a href="/contact" class="btn-primary">Prendre rendez-vous</a>
+      <a href="/reserver" class="btn-primary">Réserver une séance</a>
     </div>
   </section>
 

@@ -10,11 +10,10 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   <!-- En-tête -->
   <section aria-labelledby="contact-titre" class="py-20 px-6 text-center bg-soie">
     <div class="max-w-2xl mx-auto">
-      <h1 id="contact-titre" class="section-title">Réserver un soin</h1>
+      <h1 id="contact-titre" class="section-title">Une question ?</h1>
       <span class="section-title-bar" aria-hidden="true"></span>
       <p class="text-argile/70 leading-lecture">
-        Envoyez-moi un message et je vous réponds dans les 48h
-        pour convenir d'une date et d'un créneau.
+        Écrivez-moi — je vous réponds dans les 48h.
       </p>
     </div>
   </section>
@@ -104,20 +103,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </div>
 
           <div class="flex flex-col gap-1.5">
-            <label for="soin" class="text-xs tracking-cta uppercase text-argile/60">
-              Soin souhaité
-            </label>
-            <select
-              id="soin"
-              name="soin"
-              class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile focus:outline-none focus:border-sauge transition-colors duration-200 cursor-pointer"
-            >
-              <option value="">— Choisir un soin —</option>
-              <option value="liberation-emotions">Soin de libération émotionnelle</option>
-            </select>
-          </div>
-
-          <div class="flex flex-col gap-1.5">
             <label for="message" class="text-xs tracking-cta uppercase text-argile/60">
               Message <span aria-label="champ obligatoire">*</span>
             </label>
@@ -127,7 +112,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
               required
               rows="4"
               class="bg-transparent border-b border-argile/30 pb-2 text-sm text-argile placeholder-argile/30 focus:outline-none focus:border-sauge transition-colors duration-200 resize-none"
-              placeholder="Présentez-vous brièvement et indiquez vos disponibilités…"
+              placeholder="Votre message…"
             ></textarea>
           </div>
 

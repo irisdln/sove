@@ -79,7 +79,7 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
         {[
           {
             titre: 'Déplacement',
-            texte: 'Je me déplace dans [votre zone géographique]. Au-delà, des frais kilométriques peuvent s\'appliquer — contactez-moi pour en discuter.',
+            texte: 'Je me déplace à Belfort et dans un rayon de 10 km. Au-delà, contactez-moi pour discuter des possibilités.',
           },
           {
             titre: 'Règlement',
@@ -87,7 +87,7 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
           },
           {
             titre: 'Annulation',
-            texte: 'Toute annulation dans les 24h précédant la séance est soumise à une indemnité de [montant]€. Passé 48h, c\'est sans frais.',
+            texte: 'Toute annulation est à signaler au moins 24h à l\'avance. Passé ce délai, la séance peut être facturée. En cas d\'imprévu, contactez-moi.',
           },
           {
             titre: 'Forfaits',

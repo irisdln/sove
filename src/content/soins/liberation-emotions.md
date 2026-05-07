@@ -16,9 +16,9 @@ Il s'adresse à ceux qui ressentent un poids émotionnel persistant, une sensati
 
 La séance se déroule **à votre domicile**, dans un cadre confidentiel :
 
-1. **Accueil en profondeur** (20 min) — échange approfondi, installation du cadre de sécurité
-2. **Soin** (1h20) — accompagnement énergétique long et progressif
-3. **Intégration et clôture** (20 min) — retour en douceur, quelques mots d'orientation
+1. **Accueil** (10 min) — échange court, installation du cadre de sécurité
+2. **Soin** (30–45 min) — accompagnement énergétique doux et progressif
+3. **Intégration et clôture** (5–10 min) — retour en douceur, quelques mots d'orientation
 
 ## Ce que vous pouvez ressentir
 

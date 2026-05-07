@@ -54,28 +54,32 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   <!-- Approche -->
   <section aria-labelledby="approche-titre" class="py-20 px-6 bg-soie">
     <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
+      <div class="text-center mb-6">
         <h2 id="approche-titre" class="section-title">Mon approche</h2>
         <span class="section-title-bar" aria-hidden="true"></span>
       </div>
+      <p class="text-center text-argile/65 leading-lecture max-w-xl mx-auto mb-12">
+        Je ne travaille pas avec des protocoles. Je travaille avec vous —
+        là où vous en êtes, avec ce que vous traversez au moment présent.
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {[
           {
-            titre: 'Écoute avant tout',
-            texte: 'Chaque séance commence par un échange. Je m\'adapte à ce que vous traversez au moment présent, sans protocole figé.',
+            titre: 'Vous arrivez comme vous êtes',
+            texte: 'Pas de préparation, pas de bonne attitude à adopter. Je m\'adapte à vous — à votre rythme, à ce qui se présente ce jour-là.',
           },
           {
-            titre: 'Sans discours ésotérique',
-            texte: 'Je travaille avec les énergies du corps sans métaphysique imposée. Ce qui compte, c\'est ce que vous ressentez.',
+            titre: 'Pas d\'ésotérisme imposé',
+            texte: 'Les énergies du corps, vous les ressentez — même si vous ne croyez à rien de particulier. Je n\'ai pas besoin de vous convaincre. Votre ressenti suffit.',
           },
           {
-            titre: 'Un cadre éthique',
-            texte: 'Je n\'émets aucun diagnostic et ne formule aucune promesse thérapeutique. Mon rôle est d\'accompagner, pas de guérir.',
+            titre: 'Ce qui se passe ici reste ici',
+            texte: 'Vos mots, vos larmes, vos silences — tout reste confidentiel. Un espace où rien ne se juge, rien ne se commente. Juste de la présence.',
           },
           {
-            titre: 'La discrétion comme base',
-            texte: 'Tout ce qui se passe en séance reste confidentiel. Votre espace, votre vécu, votre rythme.',
+            titre: 'L\'honnêteté comme premier soin',
+            texte: 'Je ne diagnostique pas, je ne guéris pas. Ce que j\'offre : les conditions pour que quelque chose se libère. Le reste, c\'est votre corps qui le fait.',
           },
         ].map(({ titre, texte }) => (
           <div class="flex flex-col gap-3 p-6 bg-sable border border-soie/80 rounded-sm">

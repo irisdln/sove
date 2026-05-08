@@ -28,15 +28,17 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
   <section aria-label="Liste des soins" class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
       {soins.length > 0 ? (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="flex justify-center">
           {soins.map((soin) => (
-            <SoinCard
-              titre={soin.data.titre}
-              resume={soin.data.resume}
-              duree={soin.data.duree}
-              tarif={soin.data.tarif}
-              href={`/soins/${soin.slug}`}
-            />
+            <div class="w-full max-w-sm">
+              <SoinCard
+                titre={soin.data.titre}
+                resume={soin.data.resume}
+                duree={soin.data.duree}
+                tarif={soin.data.tarif}
+                href={`/soins/${soin.slug}`}
+              />
+            </div>
           ))}
         </div>
       ) : (

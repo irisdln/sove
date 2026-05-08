@@ -100,15 +100,17 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="flex justify-center">
           {soins.map((soin) => (
-            <SoinCard
-              titre={soin.data.titre}
-              resume={soin.data.resume}
-              duree={soin.data.duree}
-              tarif={soin.data.tarif}
-              href={`/soins/${soin.slug}`}
-            />
+            <div class="w-full max-w-sm">
+              <SoinCard
+                titre={soin.data.titre}
+                resume={soin.data.resume}
+                duree={soin.data.duree}
+                tarif={soin.data.tarif}
+                href={`/soins/${soin.slug}`}
+              />
+            </div>
           ))}
         </div>
       </div>

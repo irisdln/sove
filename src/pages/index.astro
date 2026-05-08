@@ -4,6 +4,7 @@ import SoinCard from '@/components/SoinCard.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import logo from '@/assets/logo-sove.png';
+import photoSite from '@/assets/photo_site.jpg';
 
 const soins = (await getCollection('soins', ({ data }) => !data.draft))
   .sort((a, b) => a.data.ordre - b.data.ordre)
@@ -160,12 +161,15 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
   <!-- À propos — mini section -->
   <section aria-labelledby="apropos-home-titre" class="py-24 px-6">
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <!-- Photo placeholder -->
-      <div
-        class="aspect-[4/5] bg-soie rounded-sm flex items-center justify-center text-argile/30"
-        aria-label="Photo de la praticienne"
-      >
-        <span class="font-sans text-xs tracking-cta uppercase">Photo à ajouter</span>
+      <!-- Photo -->
+      <div class="aspect-[4/3] rounded-sm overflow-hidden">
+        <Image
+          src={photoSite}
+          alt="Soin énergétique à domicile — mains posées avec douceur"
+          class="w-full h-full object-cover"
+          width={800}
+          height={600}
+        />
       </div>
 
       <!-- Texte -->

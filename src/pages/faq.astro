@@ -1,0 +1,124 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const questions = [
+  {
+    categorie: 'Le soin',
+    items: [
+      {
+        q: 'À qui s\'adresse ce soin ?',
+        r: 'À toute personne qui ressent un poids émotionnel persistant, du stress, une sensation de trop-plein, ou simplement le besoin d\'un espace pour souffler. Pas besoin d\'être en crise pour consulter. Beaucoup de clientes viennent simplement pour prendre soin d\'elles.',
+      },
+      {
+        q: 'Faut-il croire aux soins énergétiques pour que ça fonctionne ?',
+        r: 'Non. Le scepticisme est tout à fait bienvenu. Ce qui compte, c\'est votre ressenti pendant et après la séance — pas vos croyances. Beaucoup de personnes arrivent avec des doutes et repartent surprises par ce qu\'elles ont vécu.',
+      },
+      {
+        q: 'Que ressent-on pendant la séance ?',
+        r: 'Chaque séance est différente. Certaines personnes ressentent de la chaleur, des picotements, ou tombent dans un demi-sommeil. D\'autres pleurent, soupirent profondément, ou restent simplement très calmes. Tout est normal, tout est accueilli.',
+      },
+      {
+        q: 'Est-ce que ça peut faire remonter des émotions difficiles ?',
+        r: 'Oui, c\'est possible. Le soin crée un espace pour que des émotions longtemps mises de côté puissent circuler. Si quelque chose remonte, c\'est bon signe — ça signifie que quelque chose se libère. Je suis là tout au long de la séance pour accompagner ce qui se présente.',
+      },
+      {
+        q: 'Combien de séances faut-il prévoir ?',
+        r: 'Une seule séance peut déjà apporter un réel soulagement. Pour un travail plus en profondeur, un suivi de 3 à 5 séances est souvent recommandé, espacées de 3 à 4 semaines pour laisser le soin s\'intégrer. Rien n\'est imposé — on avance à votre rythme.',
+      },
+      {
+        q: 'Est-ce une thérapie psychologique ?',
+        r: 'Non. Ce soin est une pratique de bien-être, pas un acte médical ou psychothérapeutique. Il ne remplace pas un suivi médical ou psychologique. Si vous traversez une souffrance importante, je vous encourage à consulter un professionnel de santé en parallèle.',
+      },
+    ],
+  },
+  {
+    categorie: 'La séance à domicile',
+    items: [
+      {
+        q: 'Comment se déroule une séance chez moi ?',
+        r: 'Je me déplace avec tout le matériel nécessaire. La séance dure entre 45 minutes et 1 heure : un échange court pour poser le cadre, puis le soin à proprement parler pendant que vous êtes allongée, suivi d\'un retour en douceur. Vous n\'avez rien à préparer d\'autre qu\'un espace calme où vous pouvez vous allonger.',
+      },
+      {
+        q: 'De quoi ai-je besoin chez moi ?',
+        r: 'Un endroit calme où vous pouvez vous allonger confortablement — un canapé, un lit, un tapis au sol. Pas besoin de table de massage ni de matériel particulier. Je m\'adapte à votre espace.',
+      },
+      {
+        q: 'Je suis à plus de 10 km de Belfort, pouvez-vous quand même venir ?',
+        r: 'Contactez-moi, on en discute. Selon la distance, un déplacement peut être possible. Vous pouvez m\'écrire via la page Contact.',
+      },
+    ],
+  },
+  {
+    categorie: 'Réservation & pratique',
+    items: [
+      {
+        q: 'Comment se passe la réservation ?',
+        r: 'Vous choisissez votre créneau directement en ligne via le calendrier de réservation. Une fois confirmé, je vous contacte par mail pour valider l\'adresse et répondre à vos éventuelles questions avant la séance.',
+      },
+      {
+        q: 'Quels sont les modes de paiement ?',
+        r: 'Le règlement s\'effectue en fin de séance, par espèces ou virement bancaire.',
+      },
+      {
+        q: 'Que faire si je dois annuler ?',
+        r: 'Prévenez-moi au moins 24 heures à l\'avance. En cas d\'imprévu, contactez-moi dès que possible par mail — je ferai de mon mieux pour trouver une solution.',
+      },
+      {
+        q: 'Que faire après la séance ?',
+        r: 'Reposez-vous, hydratez-vous bien, et évitez les activités intenses dans les heures qui suivent. Le soin continue d\'agir après la séance — laissez-vous le temps de l\'intégrer.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Questions fréquentes"
+  description="Toutes les réponses aux questions que vous vous posez sur les soins énergétiques à domicile avec SOVÉ à Belfort."
+>
+
+  <!-- En-tête -->
+  <section aria-labelledby="faq-titre" class="py-20 px-6 text-center bg-soie">
+    <div class="max-w-2xl mx-auto">
+      <h1 id="faq-titre" class="section-title">Questions fréquentes</h1>
+      <span class="section-title-bar" aria-hidden="true"></span>
+      <p class="text-argile/70 leading-lecture">
+        Vous avez une question qui n'est pas listée ici ?
+        <a href="/contact" class="text-sauge hover:text-argile transition-colors duration-200">Écrivez-moi</a>, je vous réponds rapidement.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-label="Liste des questions" class="py-20 px-6">
+    <div class="max-w-2xl mx-auto flex flex-col gap-16">
+      {questions.map(({ categorie, items }) => (
+        <div>
+          <h2 class="text-xs tracking-cta uppercase text-sauge mb-8">{categorie}</h2>
+          <div class="flex flex-col divide-y divide-soie">
+            {items.map(({ q, r }) => (
+              <details class="group py-6 cursor-pointer">
+                <summary class="flex items-start justify-between gap-4 list-none font-serif text-base tracking-titre text-argile">
+                  <span>{q}</span>
+                  <span class="flex-shrink-0 text-sauge text-lg leading-none group-open:rotate-45 transition-transform duration-200 mt-0.5">+</span>
+                </summary>
+                <p class="mt-4 text-sm text-argile/70 leading-lecture">{r}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section aria-label="Appel à l'action" class="py-16 px-6 bg-soie text-center">
+    <div class="max-w-xl mx-auto flex flex-col gap-4 items-center">
+      <p class="font-serif text-2xl text-argile tracking-titre">
+        Prête à essayer ?
+      </p>
+      <a href="/reserver" class="btn-primary">Réserver une séance</a>
+    </div>
+  </section>
+
+</BaseLayout>

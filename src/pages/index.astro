@@ -116,6 +116,35 @@ const soins = (await getCollection('soins', ({ data }) => !data.draft))
     </section>
   )}
 
+  <!-- Témoignage vidéo -->
+  <section aria-label="Témoignage vidéo" class="py-24 px-6 bg-sable">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="flex justify-center">
+        <video
+          src="/avis-sandra.mp4"
+          controls
+          playsinline
+          preload="metadata"
+          class="rounded-sm w-full max-w-[280px] aspect-[9/16] object-cover"
+          aria-label="Témoignage vidéo de Sandra"
+        >
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      </div>
+      <div class="flex flex-col gap-6">
+        <p class="text-xs tracking-cta uppercase text-sauge">Témoignage</p>
+        <h2 class="font-serif text-3xl tracking-titre text-argile font-light leading-snug">
+          Ce qu'en dit Sandra
+        </h2>
+        <span class="block w-8 h-px bg-sauge"></span>
+        <p class="text-argile/65 leading-lecture text-sm md:text-base">
+          Un retour sincère, filmé chez elle, après sa séance de libération émotionnelle.
+        </p>
+        <a href="/reserver" class="btn-primary self-start">Réserver ma séance</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Témoignages -->
   <section aria-labelledby="temoignages-titre" class="bg-soie py-24 px-6">
     <div class="max-w-4xl mx-auto">

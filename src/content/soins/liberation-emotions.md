@@ -22,7 +22,15 @@ La séance se déroule **à votre domicile**, dans un cadre confidentiel :
 
 ## Ce que vous pouvez ressentir
 
-Ce soin peut générer des émotions en surface. Il est normal de pleurer, de soupirer profondément, ou au contraire de tomber dans un demi-sommeil. Tout est accueilli.
+Les ressentis varient d'une personne à l'autre et d'une séance à l'autre. Les plus courants :
+
+**Sensations physiques** : chaleur ou fraîcheur, picotements, sensation de légèreté ou de lourdeur. Ce sont les signes que l'énergie circule en vous.
+
+**Relâchement du corps** : frissons, légers tremblements, corps qui s'ouvre et se détend. Des réactions naturelles qui accompagnent la libération de tensions et de stress accumulés.
+
+**Libération émotionnelle** : larmes, soupirs profonds, une vague de tristesse ou de colère qui remonte. C'est bon signe — quelque chose se libère. Tout est accueilli sans jugement.
+
+Il est aussi tout à fait normal de tomber dans un demi-sommeil, ou de ne rien ressentir de particulier. Chaque séance est juste.
 
 ## Important
 

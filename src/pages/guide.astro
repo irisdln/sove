@@ -1,0 +1,122 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Guide bien-être SOVÉ"
+  description="5 rituels pour libérer ce qui pèse et retrouver l'équilibre intérieur. Un guide numérique par Iris DE LEON, praticienne en soins énergétiques à Belfort."
+>
+
+  <!-- En-tête -->
+  <section aria-labelledby="guide-titre" class="py-20 px-6 text-center bg-soie">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-xs tracking-cta uppercase text-sauge mb-4">Guide numérique</p>
+      <h1 id="guide-titre" class="section-title">5 rituels pour libérer ce qui pèse</h1>
+      <span class="section-title-bar" aria-hidden="true"></span>
+      <p class="text-argile/70 leading-lecture">
+        Un guide pratique pour retrouver l'équilibre intérieur, à votre rythme, sans expérience préalable.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenu principal -->
+  <section aria-label="Présentation du guide" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+      <!-- Couverture -->
+      <div class="flex justify-center">
+        <div class="w-full max-w-xs bg-sable border border-soie shadow-sm p-8 text-center flex flex-col gap-6 items-center">
+          <p class="text-xs tracking-cta uppercase text-sauge">SOVÉ</p>
+          <div class="w-8 h-px bg-terracotta opacity-60 mx-auto"></div>
+          <h2 class="font-serif text-2xl tracking-titre text-argile leading-tight">
+            5 rituels pour libérer ce qui pèse
+          </h2>
+          <div class="w-10 h-10 rounded-full border border-sauge opacity-30"></div>
+          <div class="mt-auto">
+            <p class="text-xs text-argile/50 tracking-wide">Iris DE LEON</p>
+            <p class="text-xs text-argile/40 mt-1">Praticienne en soins énergétiques</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="flex flex-col gap-8">
+        <div>
+          <p class="text-argile/70 leading-lecture text-sm mb-6">
+            Il y a des jours où on porte quelque chose qu'on n'arrive pas à nommer. Une fatigue qui ne part pas avec le sommeil. Une tension dans le corps. L'impression de tourner en rond sans savoir pourquoi.
+          </p>
+          <p class="text-argile/70 leading-lecture text-sm">
+            Ce guide vous propose 5 rituels simples pour libérer ce qui pèse et retrouver un équilibre intérieur. Sans expérience préalable, sans matériel particulier. À lire et pratiquer à votre rythme.
+          </p>
+        </div>
+
+        <!-- Ce que contient le guide -->
+        <div>
+          <p class="text-xs tracking-cta uppercase text-sauge mb-4">Ce que vous trouverez dedans</p>
+          <ul class="flex flex-col gap-3">
+            {[
+              { num: '01', titre: 'La respiration libératrice', duree: '5 min' },
+              { num: '02', titre: "L'ancrage dans le corps", duree: '10 min' },
+              { num: '03', titre: "L'écriture émotionnelle", duree: '15 min' },
+              { num: '04', titre: 'Le bain de lumière', duree: '10 min' },
+              { num: '05', titre: 'Le rituel du soir', duree: '10 min' },
+            ].map(({ num, titre, duree }) => (
+              <li class="flex items-baseline justify-between gap-4 py-3 border-b border-soie">
+                <div class="flex items-baseline gap-3">
+                  <span class="text-xs text-sauge font-sans">{num}</span>
+                  <span class="text-sm text-argile font-serif tracking-titre">{titre}</span>
+                </div>
+                <span class="text-xs text-terracotta font-sans flex-shrink-0">{duree}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Prix et CTA -->
+        <div class="flex flex-col gap-4">
+          <div class="flex items-baseline gap-3">
+            <span class="font-serif text-3xl text-argile">14 €</span>
+            <span class="text-xs text-argile/50 font-sans">PDF · Téléchargement immédiat</span>
+          </div>
+          <a
+            href="https://irisdln.gumroad.com/l/guide-bien-etre"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-center"
+          >
+            Obtenir le guide
+          </a>
+          <p class="text-xs text-argile/40 leading-relaxed">
+            Après votre achat, vous recevez le PDF par e-mail instantanément.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation -->
+  <section aria-label="Note de l'autrice" class="py-16 px-6 bg-soie">
+    <div class="max-w-xl mx-auto text-center flex flex-col gap-4">
+      <p class="font-serif text-xl text-argile tracking-titre leading-relaxed">
+        "Ces rituels sont un point de départ. Pas une obligation."
+      </p>
+      <p class="text-sm text-argile/60 leading-lecture">
+        Iris DE LEON · Praticienne en soins énergétiques à Belfort
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA soins -->
+  <section aria-label="Aller plus loin" class="py-16 px-6 text-center">
+    <div class="max-w-xl mx-auto flex flex-col gap-4 items-center">
+      <p class="font-serif text-2xl text-argile tracking-titre">
+        Envie d'aller plus loin ?
+      </p>
+      <p class="text-sm text-argile/60 leading-lecture max-w-sm">
+        Le guide est un premier pas. Si vous souhaitez un accompagnement personnalisé, je me déplace à votre domicile.
+      </p>
+      <a href="/reserver" class="btn-primary">Réserver une séance</a>
+    </div>
+  </section>
+
+</BaseLayout>

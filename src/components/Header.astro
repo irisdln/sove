@@ -7,7 +7,6 @@ const navLinks = [
   { href: '/soins',     label: 'Le soin' },
   { href: '/tarifs',    label: 'Tarifs'    },
   { href: '/guide',     label: 'Guide'     },
-  { href: '/app',       label: 'Application' },
   { href: '/contact',   label: 'Contact'   },
 ];
 
@@ -53,6 +52,18 @@ const currentPath = Astro.url.pathname;
             </a>
           </li>
         ))}
+        <li>
+          <a
+            href="/app"
+            class:list={[
+              'text-xs py-2 px-5 rounded-full border border-sauge text-sauge hover:bg-sauge hover:text-sable transition-colors duration-200',
+              currentPath.startsWith('/app') && 'bg-sauge text-sable',
+            ]}
+            aria-current={currentPath.startsWith('/app') ? 'page' : undefined}
+          >
+            Mon espace
+          </a>
+        </li>
         <li>
           <a
             href="/reserver"
@@ -104,6 +115,11 @@ const currentPath = Astro.url.pathname;
           </a>
         </li>
       ))}
+      <li>
+        <a href="/app" class="text-xs py-2 px-5 rounded-full border border-sauge text-sauge inline-block">
+          Mon espace
+        </a>
+      </li>
       <li>
         <a href="/reserver" class="btn-primary text-xs py-2 px-5">
           Réserver

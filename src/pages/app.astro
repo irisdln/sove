@@ -279,16 +279,17 @@
       <div class="ob-circle"></div>
       <h1 class="ob-title serif">Bienvenue dans votre espace bien-être</h1>
       <p class="ob-text">Des rituels simples pour libérer ce qui pèse et retrouver l'équilibre, au quotidien.</p>
+      <input id="prenom-input" type="text" placeholder="Votre prénom" style="width:100%;background:var(--soie);border:none;border-radius:40px;padding:14px 20px;font-size:14px;color:var(--argile);font-family:Georgia,serif;outline:none;text-align:center;margin-top:8px;" />
     </div>
     <div class="ob-footer">
-      <button class="ob-btn" onclick="document.getElementById('onboarding').style.display='none'">Commencer</button>
+      <button class="ob-btn" onclick="startApp()">Commencer</button>
     </div>
   </div>
 
   <!-- ACCUEIL -->
   <div class="screen active" id="s-home">
     <div class="home-header">
-      <p class="home-greeting">Bonjour,</p>
+      <p class="home-greeting" id="greeting">Bonjour,</p>
       <h1 class="home-title serif">Comment vous<br>sentez-vous ?</h1>
     </div>
 
@@ -467,13 +468,6 @@
 
   <!-- MOI -->
   <div class="screen" id="s-moi">
-    <div class="profile-header">
-      <div class="profile-avatar">I</div>
-      <div>
-        <p class="profile-name">Iris DE LEON</p>
-        <p class="profile-role">Praticienne en soins énergétiques<br>Belfort &amp; alentours · À domicile</p>
-      </div>
-    </div>
     <div style="padding:20px 24px 24px;display:flex;flex-direction:column;gap:20px">
       <p class="profile-bio">Je pratique des soins énergétiques à domicile pour vous aider à libérer les tensions, retrouver votre équilibre et vous recentrer. Cette application est un prolongement de ce travail — pour que vous puissiez continuer à prendre soin de vous, même entre deux séances.</p>
       <div>
@@ -519,6 +513,22 @@
 </div>
 
 <script is:inline>
+  // Prénom
+  function startApp() {
+    var prenom = document.getElementById('prenom-input').value.trim();
+    if (prenom) {
+      localStorage.setItem('sove_prenom', prenom);
+      document.getElementById('greeting').textContent = 'Bonjour, ' + prenom + ' ✦';
+    }
+    document.getElementById('onboarding').style.display = 'none';
+  }
+
+  var prenomSauvegarde = localStorage.getItem('sove_prenom');
+  if (prenomSauvegarde) {
+    document.getElementById('onboarding').style.display = 'none';
+    document.getElementById('greeting').textContent = 'Bonjour, ' + prenomSauvegarde + ' ✦';
+  }
+
   // Horloge réelle
   function updateClock() {
     const now = new Date();

@@ -394,22 +394,22 @@
         <h2 class="serif" style="font-size:20px;font-weight:400;color:var(--argile);line-height:1.3;margin-top:4px">Comment je me sens<br>en ce moment ?</h2>
       </div>
       <div class="emotions-grid">
-        <button class="emotion-btn" onclick="selectEmotion(this,'La respiration libératrice','Quand la tension monte, revenez à votre souffle. Ce rituel de 5 minutes vous aide à déposer la pression immédiatement.')">
+        <button class="emotion-btn" data-ritual="La respiration libératrice" data-text="Quand la tension monte, revenez à votre souffle. Ce rituel de 5 minutes vous aide à déposer la pression immédiatement.">
           <span class="emotion-emoji">😰</span><span class="emotion-name">Stressée</span>
         </button>
-        <button class="emotion-btn" onclick="selectEmotion(this,'Le bain de lumière','Votre corps a besoin de se ressourcer. Cette visualisation guidée vous aide à retrouver de l\'énergie en douceur.')">
+        <button class="emotion-btn" data-ritual="Le bain de lumière" data-text="Votre corps a besoin de se ressourcer. Cette visualisation guidée vous aide à retrouver de l'énergie en douceur.">
           <span class="emotion-emoji">😴</span><span class="emotion-name">Fatiguée</span>
         </button>
-        <button class="emotion-btn" onclick="selectEmotion(this,'L\'écriture émotionnelle','Laissez sortir ce qui pèse. Mettre des mots sur la tristesse permet de la traverser plutôt que de la porter.')">
+        <button class="emotion-btn" data-ritual="L'écriture émotionnelle" data-text="Laissez sortir ce qui pèse. Mettre des mots sur la tristesse permet de la traverser plutôt que de la porter.">
           <span class="emotion-emoji">🥺</span><span class="emotion-name">Triste</span>
         </button>
-        <button class="emotion-btn" onclick="selectEmotion(this,'L\'ancrage dans le corps','Quand le mental s\'emballe, revenez dans votre corps. Ce rituel vous aide à retrouver un point fixe en vous.')">
+        <button class="emotion-btn" data-ritual="L'ancrage dans le corps" data-text="Quand le mental s'emballe, revenez dans votre corps. Ce rituel vous aide à retrouver un point fixe en vous.">
           <span class="emotion-emoji">🌀</span><span class="emotion-name">Dispersée</span>
         </button>
-        <button class="emotion-btn" onclick="selectEmotion(this,'Le rituel du soir','Posez la colère avant qu\'elle ne s\'installe. Ce rituel vous aide à déposer la journée et à retrouver la paix.')">
+        <button class="emotion-btn" data-ritual="Le rituel du soir" data-text="Posez la colère avant qu'elle ne s'installe. Ce rituel vous aide à déposer la journée et à retrouver la paix.">
           <span class="emotion-emoji">😤</span><span class="emotion-name">En colère</span>
         </button>
-        <button class="emotion-btn" onclick="selectEmotion(this,'Le rituel du soir','Vous vous sentez bien — c\'est le bon moment pour ancrer cet état et préparer une belle nuit de repos.')">
+        <button class="emotion-btn" data-ritual="Le rituel du soir" data-text="Vous vous sentez bien — c'est le bon moment pour ancrer cet état et préparer une belle nuit de repos.">
           <span class="emotion-emoji">🌸</span><span class="emotion-name">Bien</span>
         </button>
       </div>
@@ -432,15 +432,15 @@
 
       <div style="background:var(--soie);border-radius:16px;padding:16px 14px">
         <div class="mood-week">
-          <div class="mood-day"><span class="mood-day-label">L</span><div class="mood-day-dot" style="background:#C9BDB1">🙂</div></div>
-          <div class="mood-day"><span class="mood-day-label">M</span><div class="mood-day-dot" style="background:#EBE2D9">😐</div></div>
-          <div class="mood-day"><span class="mood-day-label">M</span><div class="mood-day-dot" style="background:#EBE2D9">😐</div></div>
-          <div class="mood-day"><span class="mood-day-label">J</span><div class="mood-day-dot" style="background:#A3AC9A">😊</div></div>
-          <div class="mood-day"><span class="mood-day-label">V</span><div class="mood-day-dot" style="background:#C9BDB1">🙂</div></div>
-          <div class="mood-day"><span class="mood-day-label">S</span><div class="mood-day-dot empty today"></div></div>
+          <div class="mood-day"><span class="mood-day-label">L</span><div class="mood-day-dot empty"></div></div>
+          <div class="mood-day"><span class="mood-day-label">M</span><div class="mood-day-dot empty"></div></div>
+          <div class="mood-day"><span class="mood-day-label">M</span><div class="mood-day-dot empty"></div></div>
+          <div class="mood-day"><span class="mood-day-label">J</span><div class="mood-day-dot empty"></div></div>
+          <div class="mood-day"><span class="mood-day-label">V</span><div class="mood-day-dot empty"></div></div>
+          <div class="mood-day"><span class="mood-day-label">S</span><div class="mood-day-dot empty"></div></div>
           <div class="mood-day"><span class="mood-day-label">D</span><div class="mood-day-dot empty"></div></div>
         </div>
-        <p style="font-size:10px;color:var(--argile-60);text-align:center;margin-top:4px">5 jours consécutifs ✦</p>
+        <p style="font-size:10px;color:var(--argile-60);text-align:center;margin-top:4px">Notez votre humeur chaque jour</p>
       </div>
 
       <div>
@@ -458,10 +458,8 @@
 
       <div>
         <p class="eyebrow" style="margin-bottom:10px">Entrées récentes</p>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <div class="history-item"><span class="history-mood">🙂</span><div><p class="history-date">Hier · 21h14</p><p class="history-text">Journée chargée mais je me sens plus légère après le rituel.</p></div></div>
-          <div class="history-item"><span class="history-mood">😐</span><div><p class="history-date">Lundi · 8h03</p><p class="history-text">Beaucoup de pensées ce matin. L'ancrage m'a aidée.</p></div></div>
-          <div class="history-item"><span class="history-mood">😊</span><div><p class="history-date">Jeudi · 19h40</p><p class="history-text">Belle journée. J'ai fait le bain de lumière — je recommande vraiment.</p></div></div>
+        <div id="history-list" style="display:flex;flex-direction:column;gap:8px">
+          <p style="font-size:12px;color:var(--argile-60);font-style:italic;text-align:center;padding:16px 0">Vos entrées apparaîtront ici.</p>
         </div>
       </div>
     </div>
@@ -608,28 +606,45 @@
 
   function prevStep() { if (curStep > 0) { curStep--; updateStep(); } }
 
-  // Émotions
-  function selectEmotion(btn, ritual, text) {
-    document.querySelectorAll('.emotion-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    document.getElementById('emotion-ritual-name').textContent = ritual;
-    document.getElementById('emotion-ritual-text').textContent = text;
-    document.getElementById('emotion-result').classList.add('show');
-  }
+  // Émotions — lecture depuis data-attributes pour éviter les problèmes de guillemets
+  document.querySelectorAll('.emotion-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.emotion-btn').forEach(function(b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      document.getElementById('emotion-ritual-name').textContent = btn.dataset.ritual;
+      document.getElementById('emotion-ritual-text').textContent = btn.dataset.text;
+      document.getElementById('emotion-result').classList.add('show');
+    });
+  });
 
   // Journal
+  var selectedMoodEl = null;
+
   function selectMood(el) {
-    el.parentElement.querySelectorAll('.mood-day-dot').forEach(d => { d.style.boxShadow = ''; d.style.transform = ''; });
+    el.parentElement.querySelectorAll('.mood-day-dot').forEach(function(d) { d.style.boxShadow = ''; d.style.transform = ''; });
     el.style.boxShadow = '0 0 0 2px var(--argile)';
     el.style.transform = 'scale(1.15)';
+    selectedMoodEl = el;
   }
 
   function saveEntry() {
-    const ta = document.querySelector('.journal-textarea');
-    if (ta.value.trim()) {
-      ta.value = '';
-      document.querySelectorAll('#s-journal .mood-day-dot[onclick]').forEach(d => { d.style.boxShadow = ''; d.style.transform = ''; });
-    }
+    var ta = document.querySelector('.journal-textarea');
+    var text = ta.value.trim();
+    if (!text) return;
+    var mood = selectedMoodEl ? selectedMoodEl.textContent : '😐';
+    var now = new Date();
+    var h = now.getHours().toString().padStart(2,'0');
+    var m = now.getMinutes().toString().padStart(2,'0');
+    var date = "Aujourd'hui · " + h + 'h' + m;
+    var list = document.getElementById('history-list');
+    var placeholder = list.querySelector('p');
+    if (placeholder) placeholder.remove();
+    var item = document.createElement('div');
+    item.className = 'history-item';
+    item.innerHTML = '<span class="history-mood">' + mood + '</span><div><p class="history-date">' + date + '</p><p class="history-text">' + text + '</p></div>';
+    list.insertBefore(item, list.firstChild);
+    ta.value = '';
+    if (selectedMoodEl) { selectedMoodEl.style.boxShadow = ''; selectedMoodEl.style.transform = ''; selectedMoodEl = null; }
   }
 </script>
 

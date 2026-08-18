@@ -19,7 +19,7 @@
       --argile-15: rgba(94,75,67,0.12);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
     html, body {
       height: 100%;
@@ -151,7 +151,7 @@
     .ritual-today-card {
       background: var(--soie); border-radius: 16px; padding: 16px 18px;
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      cursor: pointer; margin-top: 10px;
+      cursor: pointer; margin-top: 10px; -webkit-user-select: none; user-select: none;
     }
     .ritual-today-card:active { opacity: 0.8; }
     .ritual-today-name { font-family: Georgia, serif; font-size: 15px; color: var(--argile); margin-bottom: 3px; }
@@ -159,7 +159,7 @@
     .ritual-arrow { width: 34px; height: 34px; border-radius: 50%; background: var(--sable); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--argile); flex-shrink: 0; }
 
     .quick-actions { padding: 14px 24px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .quick-card { background: var(--soie); border-radius: 14px; padding: 14px; cursor: pointer; }
+    .quick-card { background: var(--soie); border-radius: 14px; padding: 14px; cursor: pointer; -webkit-user-select: none; user-select: none; }
     .quick-card:active { opacity: 0.7; }
     .quick-icon { font-size: 19px; margin-bottom: 8px; }
     .quick-name { font-size: 12px; color: var(--argile); font-weight: 500; margin-bottom: 2px; }
@@ -180,7 +180,7 @@
     .ritual-list { display: flex; flex-direction: column; gap: 9px; }
     .ritual-item {
       background: var(--soie); border-radius: 14px; padding: 15px 18px;
-      display: flex; align-items: center; gap: 14px; cursor: pointer;
+      display: flex; align-items: center; gap: 14px; cursor: pointer; -webkit-user-select: none; user-select: none;
     }
     .ritual-item:active { opacity: 0.7; }
     .ritual-num { font-size: 10px; color: var(--sauge); letter-spacing: 0.08em; flex-shrink: 0; width: 18px; }
